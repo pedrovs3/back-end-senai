@@ -13,10 +13,8 @@ class Aluno {
   }
 
   validaSexo() {
-    if (!this.sexo == 'f' || !this.sexo == 'm' || !this.sexoProfessor == 'f' || !this.sexoProfessor == 'm') {
-      console.erro('Erro: ')
-      process.exit()
-    }
+    if (!this.sexo == 'f' || !this.sexo == 'm' || !this.sexoProfessor == 'f' || !this.sexo == 'm') return false;
+    else return true;
   }
 
   media() {
@@ -56,7 +54,7 @@ class Aluno {
 
   validaNota() {
     for (let nota of this.notas) {
-      if (0 >= nota || nota >= 100) return false;
+      if (0 > nota || nota > 100) return false;
     }
 
     return true;
