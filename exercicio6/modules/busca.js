@@ -1,4 +1,6 @@
-const { cidades: estados } = require('./cidades');
+const fs = require('fs');
+const estados = JSON.parse(fs.readFileSync('./cidades.json'))
+
 const searchState = (siglaInput = '') => {
   let cidades = new Array();
 
@@ -14,7 +16,7 @@ const searchState = (siglaInput = '') => {
   return cidades;
 };
 
-const response = 'ce';
+const response = 'sp';
 
 if (!searchState(response)) console.log('Estado inválido.');
 else console.table(searchState(response));
